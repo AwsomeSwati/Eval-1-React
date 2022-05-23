@@ -1,16 +1,27 @@
 import React from "react";
 import styles from "./tasks.module.css";
+import Task from "../Task/Task";
 
-const Tasks = () => {
+
+const Tasks = ({value,key,listData,text,todoArr,done}) => {
   // NOTE: do not delete `data-cy` key value pair
+
+   
+
   return (
     <>
+
       <ul data-cy="tasks" className={styles.tasks}>
         {/* Task List */}
+        {<Task  {...todoArr} value={value} key={key} done={done} listData={listData} text={text}/>}
+     
       </ul>
+
+
       <div data-cy="tasks-empty" className={styles.empty}>
         {/* Show when No Tasks are present */}
       </div>
+
     </>
   );
 };
